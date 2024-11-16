@@ -8,132 +8,186 @@
 /* Typography */
 body {
   font-family: 'Roboto', sans-serif;
-  color: #fff;
-  background-color: #121212;
+  color: #f1f1f1; /* Light off-white for text */
+  background-color: #1f1f1f; /* Dark background for modern feel */
+  line-height: 1.6;
 }
 
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 /* Header Styles */
 .header {
-  margin-top: 50px;
+  margin-top: 80px;
+  text-align: center;
 }
 
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffbc00; /* Gold accent color for the header */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Search Input */
 .search-input {
-  padding: 15px;
-  margin: 25px 10px;
+  padding: 12px 20px;
+  margin: 20px 10px;
   width: 100%;
   font-size: 16px;
-  border-radius: 100px;
-  border: 1px solid #ccc;
+  border-radius: 25px;
+  border: 1px solid #444;
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #ffbc00; /* Gold focus effect */
+  outline: none;
 }
 
 /* Genre and Filter Bar Styles */
 .filter-bar {
   display: flex;
-  justify-content: right;
+  justify-content: flex-start;
+  margin-bottom: 30px;
 }
 
 .filter-slot {
-  background-color: #2c2c2c;
-  padding: 0 25px;
-  margin: 10px;
+  background-color: #333;
+  padding: 10px 20px;
+  margin: 5px;
   border-radius: 50px;
+  font-size: 0.9rem;
+  color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.filter-slot:hover {
+  background-color: #ffbc00; /* Gold hover effect */
 }
 
 .filter-dropdown {
-  padding: 8px;
+  padding: 10px;
   margin: 10px;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #333;
+  border-radius: 8px;
+  background-color: #444;
+  color: #f1f1f1;
+  font-size: 1rem;
+  border: 1px solid #333;
+  transition: border-color 0.3s ease;
+}
+
+.filter-dropdown:focus {
+  border-color: #ffbc00; /* Gold focus effect */
+  outline: none;
 }
 
 /* Movies Grid Styles */
 .movies-grid, .watchlist {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  gap: 2rem 2rem;  
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
   justify-content: center;
 }
 
 /* Movie Card Styles */
 .movie-card {
-  background-color: #272727;
-  border-radius: 8px;
+  background-color: #2a2a2a; /* Slightly lighter dark color */
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
 .movie-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
 }
 
 .movie-card img {
-  width: 250px;
-  height: auto;
-  display: block;
-  object-fit: contain;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
   object-position: center;
 }
 
 .movie-card-info {
-  padding: 1rem;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
   text-align: center;
+  background-color: #333;
 }
 
 .movie-card-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  color: #f1f1f1;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
 }
 
 .movie-card-rating {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
-  background:#141414;
-  padding: 3px 10px;
+  background: #444;
+  padding: 5px 12px;
   margin: 0 auto;
-  width: 50px;
+  width: fit-content;
   border-radius: 50px;
+  color: #ffbc00; /* Gold color for ratings */
 }
 
 .movie-card-genre {
   font-size: 0.9rem;
+  color: #bbb;
   margin-right: 10px;
 }
 
 /* Watchlist Button Styles */
 .watchlist-btn {
   border: none;
-  background: #2196F3;
+  background: #8bc34a; /* Green accent */
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.watchlist-btn:hover {
+  background: #7cb342;
+  transform: translateY(-3px);
+}
+
+.watchlist-btn:active {
+  background: #66bb6a;
+  transform: translateY(2px);
+}
 
 /* Footer Styles */
 .footer {
   margin-top: 100px;
-  background-color: #2c2c2c;
-  padding: 1rem;
+  background-color: #333;
+  padding: 2rem;
   text-align: center;
+  color: #fff;
 }
 
 .footer-text {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .rating-good {
@@ -164,8 +218,11 @@ body {
   text-align: center;
   margin: 25px auto;
   font-weight: 300;
+  color: #ffbc00; /* Gold subtitle color */
+  font-size: 1.2rem;
 }
 
+/* Navigation Styles */
 nav {
   margin-top: 50px;
   margin-bottom: 25px;
@@ -173,35 +230,42 @@ nav {
 
 ul {
   list-style-type: none;
-  margin: 0;  
+  margin: 0;
   display: flex;
   justify-content: center;
 }
 
 ul li {
-  padding: 10px;
+  padding: 12px 20px;
 }
 
 nav a {
-  color:black;
+  color: #f1f1f1;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 50px;
-  background-color: #ffffff;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+  background-color: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #E7F2F1;
-  color: black;
+  background-color: #ffbc00; /* Gold hover effect */
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
+nav a:active {
+  background-color: #ff9800;
+}
+
+/* Switch Styles (For Dark Mode / Light Mode Toggle) */
 .switch {
   margin: 20px auto;
   position: relative;
   display: inline-block;
-  width: 150px; /* Width large enough to fit the label text */
-  height: 24px; /* Adjust height as needed */
+  width: 140px;
+  height: 30px;
 }
 
 .switch input {
@@ -217,35 +281,34 @@ nav a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #141414;
-  transition: .4s;
-  border-radius: 34px;
+  background-color: #444;
+  transition: 0.4s;
+  border-radius: 50px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
 .slider-label {
-  color: #fff; 
-  font-size: 12px; 
-  width: 100%; 
-  line-height: 24px; 
-  transition: opacity 0.4s ease; 
+  color: #f1f1f1;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 300;
 }
 
 input:checked + .slider:before {
-  transform: translateX(125px); /* Move the circle to the other side */
+  transform: translateX(110px);
 }
 
 input:checked + .slider {
-  background-color: #FFA100;
+  background-color: #ffbc00; /* Gold toggle color */
 }
